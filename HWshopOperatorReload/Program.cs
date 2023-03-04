@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using static System.Console; 
-
+﻿using static System.Console;
 namespace HWshopOperatorReload
 {
     internal class Program
@@ -14,11 +8,11 @@ namespace HWshopOperatorReload
             public static string _classifier = "Classification is \"InternetShop\"";
             public static uint _counerObjShop = 0;
             readonly string _nameShop;
-            public double Square { get; set; }
             string _description;
-            string _address;
-            string _telephoneNumber;
-            string _eMail;
+            public double Square { get; set; }
+            public string _address;
+            public string _telephoneNumber;
+            public string _eMail;
             public Shop(string nameShop, string eMail = "_____@______.___", string description = " ", string address = " ", string telephoneNumber = "+7_________")
             {
                 _nameShop = nameShop;
@@ -55,31 +49,31 @@ namespace HWshopOperatorReload
             }
             public static Shop operator +(Shop shop, double squareAdd)
             {
-                shop.Square += squareAdd; 
+                shop.Square += squareAdd;
                 return shop;
             }
-            public static Shop operator - (Shop shop, double squareSub)
+            public static Shop operator -(Shop shop, double squareSub)
             {
                 shop.Square -= squareSub;
                 return shop;
             }
-            public static bool operator == (Shop shop1, Shop shop2)
+            public static bool operator ==(Shop shop1, Shop shop2)
             {
-                return shop1.Square == shop2.Square; 
+                return shop1.Square == shop2.Square;
             }
-            public static bool operator != (Shop shop1, Shop shop2)
+            public static bool operator !=(Shop shop1, Shop shop2)
             {
-                return shop1.Square != shop2.Square; 
+                return shop1.Square != shop2.Square;
             }
             public override bool Equals(object obj)
             {
                 return base.Equals(obj);
             }
-            public static bool operator > (Shop shop1, Shop shop2)
+            public static bool operator >(Shop shop1, Shop shop2)
             {
                 return shop1.Square > shop2.Square;
             }
-            public static bool operator < (Shop shop, Shop shop1)
+            public static bool operator <(Shop shop, Shop shop1)
             {
                 return shop.Square < shop1.Square;
             }
@@ -87,12 +81,12 @@ namespace HWshopOperatorReload
         static void Main(string[] args)
         {
             Shop shop1 = new Shop("Adibos\\\\\\");
-            Shop shop2 = new Shop("Abidos///"); 
+            Shop shop2 = new Shop("Abidos///");
             shop1.Square = 12.6;
             shop2.Square = 12.5;
-            //WriteLine(shop1.Square);
+            WriteLine(shop1.Square);
             //shop1 += 0.78;
-            //WriteLine($"{shop1.Square}");
+            WriteLine($"{shop2.Square}");
             //shop1 -= 0.5;
             //WriteLine(shop1.Square);
             //if (shop1 == shop2) WriteLine("The shops is Equal!"); 
